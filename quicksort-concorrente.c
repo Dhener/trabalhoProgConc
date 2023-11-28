@@ -138,6 +138,12 @@ void ordene(int vet[], int inicio, int meio, int fim)
     // criando um vetor temporario e copiando o vetor original
     int *vetor_temporario;
     vetor_temporario = (int *)malloc(sizeof(int) * (fim - inicio));
+    if (vetor_temporario == NULL)
+    {
+        printf("--ERRO: malloc()\n");
+        exit(-1);
+    }
+    // int vetor_temporario[fim - inicio];
 
     int i = inicio;
     int j = meio;
@@ -247,6 +253,11 @@ int main(int argc, char *argv[])
             printf("ERRO: pthread_join() \n");
             exit(-1);
         }
+    }
+
+    for (int k = 0; k < numero_de_elementos; k++)
+    {
+        printf("%d\n", elementos[k]);
     }
 
     //--Faz a junção dos blocos ordenados por cada thread e os ordena
