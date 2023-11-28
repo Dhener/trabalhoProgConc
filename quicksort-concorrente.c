@@ -28,25 +28,25 @@ void inicializarVetores(int opcao)
     srand(time(NULL));
     if (opcao == 1)
     {
-        for (int j = numero_de_elementos; j > 0; j--)
+        for (long int j = numero_de_elementos; j > 0; j--)
         {
-            elementos[j] = j;
+            elementos[numero_de_elementos - j] = j;
             // printf("%d\n", elementos[j]);
-            elementos_teste[j] = j;
+            elementos_teste[numero_de_elementos - j] = j;
         }
     }
     else if (opcao == 2)
     {
-        for (int j = 0; j < numero_de_elementos; j++)
+        for (long int j = 0; j < numero_de_elementos; j++)
         {
-            elementos[j] = j;
+            elementos[j] = j + 1;
             // printf("%d\n", elementos[j]);
-            elementos_teste[j] = j;
+            elementos_teste[j] = j + 1;
         }
     }
     else
     {
-        for (int j = 0; j < numero_de_elementos; j++)
+        for (long int j = 0; j < numero_de_elementos; j++)
         {
             int temp = rand() % MAX;
             elementos[j] = temp;
