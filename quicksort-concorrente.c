@@ -255,11 +255,6 @@ int main(int argc, char *argv[])
         }
     }
 
-    for (int k = 0; k < numero_de_elementos; k++)
-    {
-        printf("%d\n", elementos[k]);
-    }
-
     //--Faz a junção dos blocos ordenados por cada thread e os ordena
     //--Não é necessário chamar o mergeSort com 1 thread porque equivale ao quicksort normal
     if (numero_de_threads > 1)
